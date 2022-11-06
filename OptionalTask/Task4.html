@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <script>
+        let num1=window.prompt('enter the first  number');
+        let num2=window.prompt('enter the Secound  number');
+        let num3=window.prompt('enter the thired number');
+        let max,min
+        if (num1>num2){
+                max=num1;
+                min=num2;
+        }
+        else{
+            max=num2;
+            min=num1;
+        }
+        if (num3>max){
+            document.write(num3+','+max+','+min)
+        }
+        else if(num3>min&&num3<max){
+            document.write(max+','+num3+','+min)
+        }
+        else{
+            document.write(max+','+min+','+num3)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
