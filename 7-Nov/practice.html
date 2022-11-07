@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        var arr=[10,20,30];
+        var count=arr.length;
+        function Sum(arr,count){
+            let sum=0;
+            for (let i=0;i<count;i++){
+                   sum+=arr[i]; 
+                    
+            }
+            return sum;
+        }
+        let result=Sum(arr,count);
+        document.write(result +"<br>");
+        
+      
+      
+        var string="Hala/Alaa/Hala";
+        let newString=string.split("/");
+        document.write("split :"+newString+"<br>");
+        newString=string.replace('Hala','Alaa');
+        document.write("replace :"+newString+"<br>");
+        newString=string.replaceAll('Hala','Alaa');
+        document.write("replaceAll :"+newString+"<br>");
+        newString=string.startsWith('H');
+        document.write("StartWith :"+newString+"<br>");
+
+        const person={name:"Ahmad", age:"50", Nationality:"jordanian"};
+        document.write(person.name)
+
+    </script>
+</body>
+</html>
