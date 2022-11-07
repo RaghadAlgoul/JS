@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task9</title>
+</head>
+<body>
+    <script>
+        str1="air";
+        str2="schoo";
+        str3="car";
+        str4="github";
+        function  longerString(str1,str2,str3,str4){
+            let arr=[str1,str2,str3,str4];
+            let large=arr[0];
+            for (let i=0;i<arr.length;i++){
+                if (arr[i].length>large.length){
+                    large=arr[i];
+                }
+
+            }
+            return large;
+        }
+        document.write("the longer string is "+longerString(str1,str2,str3,str4));
+    </script>
+</body>
+</html>
