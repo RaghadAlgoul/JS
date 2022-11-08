@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        .elements{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <p id="header">the getElementById() method</p>
+    <p>the getElementByTagName() method </p>
+    <p class="elements">element1</p>
+    <p class="elements">element2</p>
+    <p class="elements">element3</p>
+    <p class="elements">element4</p>
+    <img src="logo.png" width="200px">
+    <h2>Hello world</h2>
+    <button onclick="changColor()">Change background color</button>
+    <h5 class="el">element1</h5>
+    <h5 class="el">element2</h5>
+    <h5 class="el">element3</h5>
+    <h5 class="el">element4</h5>
+    <p>Enter your name: <input type="text" id="fname" onchange="myFunction2()"></p>
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="logo.png" alt="Smiley" width="32" height="32">
+    <p>Enter your Age: <input type="number" id="fnumber" onkeyup="myFunction3()"></p>
+    <script>
+        document.getElementById("header").style.fontSize="40px";//ID+style
+        document.getElementsByTagName("p")[1].innerHTML +="hello";//tag name +innerHTML
+        for(let i=0;i<4;i++){
+            document.getElementsByClassName("elements")[i].style.color="red";//CLASS
+        }
+        document.getElementsByTagName("img")[0].src="image.jfif";
+        function changColor(){
+            document.getElementsByTagName("h2")[0].setAttribute("class" ,"elements");//setAttribute+onclick
+        }
+        document.querySelector(".el").style.backgroundColor = "red";
+        function myFunction2() {
+            var x = document.getElementById("fname");
+
+            x.value ="Hello "+ x.value;
+        }
+        function bigImg(x) {
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+        function myFunction3() {
+            var x = document.getElementById("fname");
+            x.value = x.value.style.color();
+}
+
+    </script>
+
+</body>
+</html>

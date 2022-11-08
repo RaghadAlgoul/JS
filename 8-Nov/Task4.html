@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <style>
+        #divGrid{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content: start;
+        }
+        label{
+            font-size: 20px;
+        }
+        p{
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 4px;
+            
+        }
+        button{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="divGrid">
+        <div><label for="password">Password(min 6 charecters) :</label><br><br>
+             <label for="Rpassword">Repeat password :</label></div>
+        <div><input name="password" type="password" id="password"onchange="Password()"><br><br>
+            <input name="Repassword" type="password" id="Repassword" onchange="RePassword()"></div>
+        <div><p id="p1">Too short</p><br><p id="p2">the two password dont match</p></div>
+    </div>
+    <br>
+    <button id="buttonId">Submit</button>
+    <script>
+        function Password(){
+            pass=document.querySelector("#password").value;
+            length=pass.length;
+            if(length<6){
+                 document.getElementById("p1").style.display="inline-block";
+            }
+        }
+        function RePassword(){
+            Repass=document.querySelector("#Repassword").value;
+            pass=document.querySelector("#password").value;
+            if(pass == Repass){
+                document.getElementById("buttonId").style.display="block";
+            }
+            else{
+                document.getElementById("p2").style.display="inline-block";
+            }
+        }
+    </script>
+</body>
+</html>

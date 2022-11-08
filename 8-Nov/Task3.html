@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+</head>
+<body>
+    <select name="font-family" id="font" onchange="FontFamiltFunc()" >
+        <option  value="Arial" >Arial</option> 
+        <option  value="sans-serif" >sans-serif</option>
+        <option value="cursive" >cursive</option>
+      </select>
+      <select name="size" id="size" onchange="SizeFunc()">
+        <option  value="12pt" >12pt</option> 
+        <option  value="18pt" >18pt</option>
+        <option value="25pt" >25pt</option>
+      </select>
+      <label for="italic">Italic</label>
+      <input type="radio" id="italic" onclick="IsItalic()">
+      <label for="bold">Bold</label>
+      <input type="radio" id="bold" onclick="IsBold()">
+      <label for="Underline">Underline</label>
+      <input type="radio" id="Underline" onclick="IsUnderline()">
+      <br><br>
+      <div id="text" style="width:70%; border:solid 2px black ;height:200px ;">The quick brown fox jumps over the lazy dog</div>
+      
+      
+   
+
+
+
+      <script>
+        function FontFamiltFunc(){
+            fonts=["Arial","sans-serif","cursive"];
+            selected=document.querySelector("#font");
+            selectedItem=selected.value;
+            x=fonts.indexOf(selectedItem);
+            if (x==0){
+                document.getElementById("text").style.fontFamily="Arial";
+            }
+            else if(x==1){
+                document.getElementById("text").style.fontFamily="Times New Roman, Times, serif";
+            }
+            else{
+                document.getElementById("text").style.fontFamily="cursive";
+            }
+        }
+        function SizeFunc(){
+            sizeItems=["12pt","18pt","25pt"];
+            selected=document.querySelector("#size");
+            selectedItem=selected.value;
+            x=sizeItems.indexOf(selectedItem);
+            if (x==0){
+                document.getElementById("text").style.fontSize="12pt";
+            }
+            else if(x==1){
+                document.getElementById("text").style.fontSize="18pt";
+            }
+            else{
+                document.getElementById("text").style.fontSize="25pt";
+            }
+        }
+        function IsItalic(){
+            checkBox=document.querySelector("#italic");
+            if (checkBox.checked == true ){
+                document.getElementById("text").style.fontStyle="italic";
+            }
+        }
+        function IsBold(){
+            checkBox=document.querySelector("#bold");
+            if (checkBox.checked == true ){
+                document.getElementById("text").style.fontWeight="bold";
+            }
+        }
+        function IsUnderline(){
+            checkBox=document.querySelector("#Underline");
+            if (checkBox.checked == true ){
+                document.getElementById("text").style.textDecoration="underline";
+            }
+        }
+      </script>
+</body>
+</html>

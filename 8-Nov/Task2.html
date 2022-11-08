@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+<body>
+    
+</body>
+</html><label for="country"></label>
+
+<select name="country" id="country" onchange="ChangeImage()">
+  <option  value="Norway" >Norway</option> 
+  <option  value="Palestine" >Palestine</option>
+  <option value="Jordan" >Jordan</option>
+  <option value="Syria" >Syria</option>
+  <option value="Egypt" >Egypt</option>
+</select>
+<br>
+<img src="Flag1.png" width="250px" height="250px">
+
+
+
+  <script >
+    
+    function ChangeImage(selected){
+        contryList=["Norway","Palestine","Jordan","Syria","Egypt"];
+        imageList=["Flag1.png","Flag2.png","Flag3.png","Flag4.png","Flag5.png"];
+        selected=document.querySelector("#country");
+        selectedItem=selected.value;
+        x=contryList.indexOf(selectedItem);
+        document.getElementsByTagName("img")[0].src=imageList[x];
+    }
+
+
+
+
+  </script>
+  </body>
