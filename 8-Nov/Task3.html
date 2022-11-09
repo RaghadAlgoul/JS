@@ -18,11 +18,11 @@
         <option value="25pt" >25pt</option>
       </select>
       <label for="italic">Italic</label>
-      <input type="radio" id="italic" onclick="IsItalic()">
+      <input type="checkbox" id="italic" onclick="IsItalic()">
       <label for="bold">Bold</label>
-      <input type="radio" id="bold" onclick="IsBold()">
+      <input type="checkbox" id="bold" onclick="IsBold()">
       <label for="Underline">Underline</label>
-      <input type="radio" id="Underline" onclick="IsUnderline()">
+      <input type="checkbox" id="Underline" onclick="IsUnderline()">
       <br><br>
       <div id="text" style="width:70%; border:solid 2px black ;height:200px ;">The quick brown fox jumps over the lazy dog</div>
       
@@ -67,17 +67,26 @@
             if (checkBox.checked == true ){
                 document.getElementById("text").style.fontStyle="italic";
             }
+            else{
+                document.getElementById("text").style.fontStyle="normal";
+            }
         }
         function IsBold(){
             checkBox=document.querySelector("#bold");
             if (checkBox.checked == true ){
                 document.getElementById("text").style.fontWeight="bold";
             }
+            else{
+                document.getElementById("text").style.fontWeight="normal";
+            }
         }
         function IsUnderline(){
             checkBox=document.querySelector("#Underline");
             if (checkBox.checked == true ){
                 document.getElementById("text").style.textDecoration="underline";
+            }
+            else{
+                document.getElementById("text").style.textDecoration="none";
             }
         }
       </script>

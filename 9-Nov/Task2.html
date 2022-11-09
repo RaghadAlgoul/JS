@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+</head>
+<body>
+    <fieldset id="fieldId">
+        <legend>personal data </legend>
+        <form>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" >
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+        <br><br>
+        <label for="radio">Gender :</label>
+        <input type="radio"name="radio" value="female" id="female">
+        <label for="radio1">Female</label>
+        <input type="radio" name="radio" value="male" id="male">
+        <label for="radio2">Male</label>
+        <br><br>
+        <label for="des">Description :</label>
+        <textarea id="des" name="des" placeholder="write here"></textarea>
+        <br><br>
+        <label for="Uni">Major and University :</label>
+        <input type="text" id="Uni" name="Uni" >
+        <br><br>
+        <label>your faviourt programming language :</label>
+        <input type="checkbox" name="l " id="python" value="python"><label for="Python">Python</label>
+        <input type="checkbox" name="l"id="java" value="java"><label for="java">Java</label>
+        <input type="checkbox" name="l" id="c" value="C#"><label for="c">c#</label>
+        <br><br>
+        <button id="saveButton" type="button" onclick="savFunc()" >Save</button>
+        <button id="showButton" type="button" onclick="showFunc()" >Show</button><br>
+
+    </form>
+    </fieldset>
+    <div id="card">
+        <h3 id="nameC"></h3>
+        <h3 id="ageC"></h3>
+        <h3 id="genderC"></h3>
+        <h3 id="desC"></h3>
+        <h3 id="maj"></h3>
+        <h3 id="lanC"></h3>
+    </div>
+   
+    <script>
+        document.getElementById("fieldId").style.width="60%";
+        document.getElementById("card").style.width="20%";
+        document.getElementById("card").style.display="none";
+        document.getElementById("card").style.height="340px";
+        document.getElementById("card").style.backgroundColor="#e9e1c1";
+        document.getElementById("card").style.marginLeft="35%";
+        document.getElementById("card").style.marginTop="10px";
+        document.getElementById("card").style.paddingTop="10px";
+        document.getElementById("card").style.textAlign="center";
+
+        
+        function savFunc(){
+            
+            var name=document.getElementById("name");
+            sessionStorage.setItem("name",name.value);
+
+            var age=document.getElementById("age");
+            sessionStorage.setItem("age",age.value);
+            
+            var desc=document.getElementById("des");
+            sessionStorage.setItem("des",desc.value);
+            
+            var uni=document.getElementById("Uni");
+            sessionStorage.setItem("uni",uni.value);
+            
+            
+            let Gender = "";
+            if (document.getElementById("female").checked) {
+                Gender += document.getElementById("female").value;
+            }
+            else if (document.getElementById("male").checked) {
+                Gender += document.getElementById("male").value;
+            }
+            sessionStorage.setItem("Gender", Gender);
+
+
+            var lang = "";
+            if (document.getElementById("python").checked) {
+                lang += document.getElementById("python").value;
+                lang +=" ";
+            }
+            if (document.getElementById("java").checked) {
+                lang += document.getElementById("java").value;
+                lang +=" ";
+            }
+            if (document.getElementById("c").checked) {
+                lang += document.getElementById("c").value;
+                lang +=" ";
+            }
+            var x=lang.split(" ")
+            sessionStorage.setItem("lang", lang);
+
+
+        }
+        document.getElementById("nameC").innerHTML+=sessionStorage.getItem("name");
+        document.getElementById("ageC").innerHTML+=sessionStorage.getItem("age") +"years old";
+        document.getElementById("desC").innerHTML +=sessionStorage.getItem("des");  
+        document.getElementById("maj").innerHTML +=sessionStorage.getItem("uni");
+        document.getElementById("lanC").innerHTML +=sessionStorage.getItem("lang"); 
+        document.getElementById("genderC").innerHTML +=sessionStorage.getItem("Gender");  
+
+        function showFunc(){
+            document.getElementById("card").style.display="block";
+        }
+    </script>
+
+</body>
+</html>
