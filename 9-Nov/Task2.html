@@ -8,31 +8,20 @@
 </head>
 <body>
     <fieldset id="fieldId">
-        <legend>personal data </legend>
+        <legend>masterpiece</legend>
         <form>
         <br>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" >
-        <br><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age">
-        <br><br>
-        <label for="radio">Gender :</label>
-        <input type="radio"name="radio" value="female" id="female">
-        <label for="radio1">Female</label>
-        <input type="radio" name="radio" value="male" id="male">
-        <label for="radio2">Male</label>
+        <label for="Sub">Subject:</label>
+        <input type="text" id="Sub" name="Sub" >
         <br><br>
         <label for="des">Description :</label>
         <textarea id="des" name="des" placeholder="write here"></textarea>
         <br><br>
-        <label for="Uni">Major and University :</label>
-        <input type="text" id="Uni" name="Uni" >
+        <label for="user">Users Type:</label>
+        <input type="text" id="user" name="user" >
         <br><br>
-        <label>your faviourt programming language :</label>
-        <input type="checkbox" name="l " id="python" value="python"><label for="Python">Python</label>
-        <input type="checkbox" name="l"id="java" value="java"><label for="java">Java</label>
-        <input type="checkbox" name="l" id="c" value="C#"><label for="c">c#</label>
+        <label for="tech">Technology used:</label>
+        <input type="text" id="tech" name="tech" >
         <br><br>
         <button id="saveButton" type="button" onclick="savFunc()" >Save</button>
         <button id="showButton" type="button" onclick="showFunc()" >Show</button><br>
@@ -40,12 +29,11 @@
     </form>
     </fieldset>
     <div id="card">
-        <h3 id="nameC"></h3>
-        <h3 id="ageC"></h3>
-        <h3 id="genderC"></h3>
+        <h3 id="SubC"></h3>
         <h3 id="desC"></h3>
-        <h3 id="maj"></h3>
-        <h3 id="lanC"></h3>
+        <h3 id="userC"></h3>
+        <h3 id="techC"></h3>
+        
     </div>
    
     <script>
@@ -62,53 +50,23 @@
         
         function savFunc(){
             
-            var name=document.getElementById("name");
-            sessionStorage.setItem("name",name.value);
+            var Sub=document.getElementById("Sub");
+            sessionStorage.setItem("Sub",Sub.value);
 
-            var age=document.getElementById("age");
-            sessionStorage.setItem("age",age.value);
+            var user=document.getElementById("user");
+            sessionStorage.setItem("user",user.value);
             
             var desc=document.getElementById("des");
             sessionStorage.setItem("des",desc.value);
             
-            var uni=document.getElementById("Uni");
-            sessionStorage.setItem("uni",uni.value);
+            var tech=document.getElementById("tech");
+            sessionStorage.setItem("tech",tech.value);
             
-            
-            let Gender = "";
-            if (document.getElementById("female").checked) {
-                Gender += document.getElementById("female").value;
-            }
-            else if (document.getElementById("male").checked) {
-                Gender += document.getElementById("male").value;
-            }
-            sessionStorage.setItem("Gender", Gender);
-
-
-            var lang = "";
-            if (document.getElementById("python").checked) {
-                lang += document.getElementById("python").value;
-                lang +=" ";
-            }
-            if (document.getElementById("java").checked) {
-                lang += document.getElementById("java").value;
-                lang +=" ";
-            }
-            if (document.getElementById("c").checked) {
-                lang += document.getElementById("c").value;
-                lang +=" ";
-            }
-            var x=lang.split(" ")
-            sessionStorage.setItem("lang", lang);
-
-
         }
-        document.getElementById("nameC").innerHTML+=sessionStorage.getItem("name");
-        document.getElementById("ageC").innerHTML+=sessionStorage.getItem("age") +"years old";
-        document.getElementById("desC").innerHTML +=sessionStorage.getItem("des");  
-        document.getElementById("maj").innerHTML +=sessionStorage.getItem("uni");
-        document.getElementById("lanC").innerHTML +=sessionStorage.getItem("lang"); 
-        document.getElementById("genderC").innerHTML +=sessionStorage.getItem("Gender");  
+        document.getElementById("SubC").innerHTML+=sessionStorage.getItem("Sub");
+        document.getElementById("desC").innerHTML+=sessionStorage.getItem("des");
+        document.getElementById("userC").innerHTML +=sessionStorage.getItem("user");  
+        document.getElementById("techC").innerHTML +=sessionStorage.getItem("tech");
 
         function showFunc(){
             document.getElementById("card").style.display="block";
